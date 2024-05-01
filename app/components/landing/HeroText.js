@@ -1,5 +1,7 @@
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { CheckIcon } from "@heroicons/react/20/solid";
+
 const buttonCopy = {
   idle: "Stay Updated",
   loading: "Loading...",
@@ -11,27 +13,95 @@ const buttonCopy = {
   ),
 };
 
-import { motion, AnimatePresence } from "framer-motion";
-
 export default function HeroText() {
   const [email, setEmail] = useState("");
   const [isCopied, setIsCopied] = useState(false);
   const [buttonState, setButtonState] = useState("idle");
+
+  // Split the headline into two parts
+  const firstPart = "The smartest tool for";
+  const secondPart = "academic exploration.";
+
+  // Split each part into words for individual animation
+  const firstWords = firstPart.split(" ");
+  const secondWords = secondPart.split(" ");
+
   return (
     <div className="flex justify-center text-center mt-10">
       <div>
-        <button className="rounded-full px-3 py-1 bg-gradient-to-r font-normal text-sm from-blue-400 to-blue-500 text-white">
+        <motion.button
+          className="rounded-full px-3 py-1 bg-gradient-to-r font-normal text-sm from-blue-400 to-blue-500 text-white"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.2, type: "spring", stiffness: 100 }}
+        >
           Private beta
-        </button>
-        <h1 className="text-6xl tracking-tighter font-medium mt-4">
-          The smartest tool for <br /> academic exploration.
-        </h1>
-        <p className="mt-4">
+        </motion.button>
+
+        <div className="text-6xl tracking-tighter mt-4">
+          <div>
+            {firstWords.map((word, index) => (
+              <motion.span
+                key={`first-${index}`}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  delay: 0.1 * index + 0.2,
+                  duration: 0.4,
+                  type: "spring",
+                  stiffness: 40,
+                }}
+                className="mx-2 inline-block"
+              >
+                {word}
+              </motion.span>
+            ))}
+          </div>
+          {/* Animate second part */}
+          <div>
+            {secondWords.map((word, index) => (
+              <motion.span
+                key={`second-${index}`}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  delay: 0.1 * index + 0.7,
+                  duration: 0.4,
+                  type: "spring",
+                  stiffness: 40,
+                }}
+                className="mx-2 inline-block"
+              >
+                {word}
+              </motion.span>
+            ))}
+          </div>
+        </div>
+        <motion.p
+          className="mt-4"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            delay: 1,
+            duration: 0.3,
+            type: "spring",
+            stiffness: 40,
+          }}
+        >
           Reimagine the way students plan their <br />
           degree and supercharge their outcomes.
-        </p>
-
-        <div className="flex justify-center mt-4">
+        </motion.p>
+        <motion.div
+          className="flex justify-center mt-4"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            delay: 1,
+            duration: 0.2,
+            type: "spring",
+            stiffness: 40,
+          }}
+        >
           <div className="flex justify-between items-center gap-4 rounded-full border py-[1px] pl-4 pr-[1px]">
             <input
               type="email"
@@ -49,9 +119,8 @@ export default function HeroText() {
 
                 setButtonState("loading");
 
-                await setTimeout(() => {
-                  setButtonState("success");
-                }, 1750);
+                await new Promise((resolve) => setTimeout(resolve, 1750));
+                setButtonState("success");
               }}
             >
               <AnimatePresence mode="popLayout" initial={false}>
@@ -67,8 +136,8 @@ export default function HeroText() {
               </AnimatePresence>
             </h1>
           </div>
-        </div>
-        <p
+        </motion.div>
+        <motion.p
           className={
             isCopied
               ? `mt-4 text-gray-400 text-xs`
@@ -78,11 +147,17 @@ export default function HeroText() {
             navigator.clipboard.writeText("team@gradsteps.com");
             setIsCopied(true);
           }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{
+            delay: 1.4,
+            duration: 0.2,
+          }}
         >
           {isCopied
             ? "Email copied to clipboard!"
             : "Interested in contributing? Email us"}
-        </p>
+        </motion.p>
       </div>
     </div>
   );
