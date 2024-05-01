@@ -1,9 +1,18 @@
 import Link from "next/link";
 import Image from "next/image";
-
+import { motion } from "framer-motion";
 export default function Navbar() {
   return (
-    <nav className="px-48 py-4 flex items-center justify-between w-full font-medium">
+    <motion.nav
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{
+        duration: 0.2,
+        type: "spring",
+        stiffness: 60,
+      }}
+      className="px-48 py-4 flex items-center justify-between w-full font-medium"
+    >
       <Link href="/">
         <Image
           src="/wordmark.png"
@@ -21,6 +30,6 @@ export default function Navbar() {
           Learn more
         </a>
       </div>
-    </nav>
+    </motion.nav>
   );
 }
