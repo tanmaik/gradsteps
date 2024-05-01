@@ -1,8 +1,22 @@
 import { useState } from "react";
+import { CheckIcon } from "@heroicons/react/20/solid";
+const buttonCopy = {
+  idle: "Stay Updated",
+  loading: "Loading...",
+  success: (
+    <div className="flex gap-1 items-center">
+      <CheckIcon className="h-5 w-5 text-white" />
+      <span>Success!</span>
+    </div>
+  ),
+};
+
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function HeroText() {
   const [email, setEmail] = useState("");
   const [isCopied, setIsCopied] = useState(false);
+  const [buttonState, setButtonState] = useState("idle");
   return (
     <div className="flex justify-center text-center mt-10">
       <div>
@@ -30,11 +44,27 @@ export default function HeroText() {
             />
             <h1
               className="py-2 bg-black cursor-pointer text-white rounded-full px-4"
-              onClick={() => {
-                setEmail("");
+              onClick={async () => {
+                if (buttonState === "success") return;
+
+                setButtonState("loading");
+
+                await setTimeout(() => {
+                  setButtonState("success");
+                }, 1750);
               }}
             >
-              Stay Updated
+              <AnimatePresence mode="popLayout" initial={false}>
+                <motion.span
+                  transition={{ type: "spring", duration: 0.3, bounce: 0 }}
+                  initial={{ opacity: 0, y: -25 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 25 }}
+                  key={buttonState}
+                >
+                  {buttonCopy[buttonState]}
+                </motion.span>
+              </AnimatePresence>
             </h1>
           </div>
         </div>
