@@ -2,6 +2,7 @@ import { useState } from "react";
 
 export default function HeroText() {
   const [email, setEmail] = useState("");
+  const [isCopied, setIsCopied] = useState(false);
   return (
     <div className="flex justify-center text-center mt-10">
       <div>
@@ -37,6 +38,21 @@ export default function HeroText() {
             </h1>
           </div>
         </div>
+        <p
+          className={
+            isCopied
+              ? `mt-4 text-gray-400 text-xs`
+              : `mt-4 cursor-pointer hover:underline hover:text-gray-400 text-xs text-gray-300 transition-all`
+          }
+          onClick={() => {
+            navigator.clipboard.writeText("team@gradsteps.com");
+            setIsCopied(true);
+          }}
+        >
+          {isCopied
+            ? "Email copied to clipboard!"
+            : "Interested in contributing? Email us"}
+        </p>
       </div>
     </div>
   );
