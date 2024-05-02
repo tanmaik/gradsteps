@@ -10,7 +10,7 @@ export default function UnsupportedMobile() {
   const firstWords = firstPart.split(" ");
   const secondWords = secondPart.split(" ");
   return (
-    <div className="flex justify-center h-screen items-center px-4">
+    <div className="flex justify-center h-dvh items-center px-4">
       <div className="text-center">
         <motion.div
           className="flex justify-center"
