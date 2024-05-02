@@ -113,13 +113,7 @@ export default function UnsupportedMobile() {
             stiffness: 40,
           }}
         >
-          <Image
-            src="/peeps.png"
-            width={1420}
-            height={920}
-            className=""
-            alt="GradSteps"
-          />
+          <Image src="/peeps.png" width={1420} height={920} alt="Peeps" />
         </motion.div>
       </div>
     </div>

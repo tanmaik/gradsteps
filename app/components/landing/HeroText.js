@@ -20,7 +20,7 @@ export default function HeroText() {
 
   // Split the headline into two parts
   const firstPart = "The smartest tool for";
-  const secondPart = "academic exploration.";
+  const secondPart = "academic planning.";
 
   // Split each part into words for individual animation
   const firstWords = firstPart.split(" ");
@@ -30,7 +30,7 @@ export default function HeroText() {
     <div className="flex justify-center text-center mt-10">
       <div>
         <motion.button
-          className="rounded-full cursor-help px-3 py-1 bg-gradient-to-r font-normal text-sm from-blue-400 to-blue-500 text-white"
+          className="rounded-full cursor-help px-3 py-1 bg-gradient-to-r text-sm from-blue-500 to-blue-600 text-white"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.2, type: "spring", stiffness: 100 }}
@@ -38,7 +38,7 @@ export default function HeroText() {
           Private beta
         </motion.button>
 
-        <div className="text-5xl tracking-tighter mt-4">
+        <div className="text-5xl tracking-tighter mt-4 font-medium">
           <div>
             {firstWords.map((word, index) => (
               <motion.span
@@ -51,7 +51,7 @@ export default function HeroText() {
                   type: "spring",
                   stiffness: 40,
                 }}
-                className="mx-2 inline-block"
+                className="mx-1 inline-block"
               >
                 {word}
               </motion.span>
@@ -70,7 +70,7 @@ export default function HeroText() {
                   type: "spring",
                   stiffness: 40,
                 }}
-                className="mx-2 inline-block"
+                className="mx-1 inline-block"
               >
                 {word}
               </motion.span>
@@ -88,8 +88,8 @@ export default function HeroText() {
             stiffness: 40,
           }}
         >
-          Reimagine the way students plan their <br />
-          degree and supercharge their outcomes.
+          Reimagine the way students plan degrees <br />
+          and supercharge academic outcomes.
         </motion.p>
         <motion.div
           className="flex justify-center mt-4"
@@ -114,7 +114,7 @@ export default function HeroText() {
                 }}
               />
               <h1
-                className="py-2 bg-blue-500 hover:bg-blue-700 transition-all cursor-pointer text-white rounded-full px-4"
+                className="py-2 bg-black hover:bg-gray-800 transition-all cursor-pointer text-white rounded-full px-4"
                 onClick={async () => {
                   if (buttonState === "success") return;
 
