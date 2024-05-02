@@ -140,8 +140,8 @@ export default function HeroText() {
         <motion.p
           className={
             isCopied
-              ? `mt-4 text-gray-400 text-xs`
-              : `mt-4 cursor-pointer hover:underline hover:text-gray-400 text-xs text-gray-300 transition-all`
+              ? `mt-4 text-gray-500 text-xs`
+              : `mt-4 cursor-pointer hover:underline hover:text-gray-500 text-xs text-gray-400 transition-all`
           }
           onClick={() => {
             navigator.clipboard.writeText("team@gradsteps.com");
