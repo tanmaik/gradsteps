@@ -25,6 +25,7 @@ export default function Navbar() {
       <div className="flex gap-10 items-center">
         <a
           href="https://cal.com/tanmai/chat-about-gradsteps"
+          target="_blank"
           className="py-1 px-4 border rounded-xl hover:bg-gray-50 transition-all"
         >
           Learn more
