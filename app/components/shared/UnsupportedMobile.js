@@ -2,11 +2,9 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 export default function UnsupportedMobile() {
-  // Split the headline into two parts
   const firstPart = "The smartest tool for";
   const secondPart = "academic planning.";
 
-  // Split each part into words for individual animation
   const firstWords = firstPart.split(" ");
   const secondWords = secondPart.split(" ");
   return (
