@@ -3,22 +3,13 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 export default function Navbar() {
   return (
-    <motion.nav
-      initial={{ opacity: 0, y: -20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{
-        duration: 0.2,
-        type: "spring",
-        stiffness: 60,
-      }}
-      className="px-48 py-4 flex items-center justify-between w-full font-medium"
-    >
+    <nav className="px-48 py-4 flex items-center justify-between w-full font-medium">
       <Link href="/">
         <Image
           src="/wordmark.png"
           alt="Wordmark"
-          height={500}
-          width={500}
+          height={190}
+          width={1090}
           className="w-32"
         />
       </Link>
@@ -31,6 +22,6 @@ export default function Navbar() {
           Learn more
         </a>
       </div>
-    </motion.nav>
+    </nav>
   );
 }

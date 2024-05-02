@@ -102,62 +102,64 @@ export default function HeroText() {
             stiffness: 40,
           }}
         >
-          <div className="flex justify-between items-center gap-4 rounded-full border py-[1px] pl-4 pr-[1px]">
-            <input
-              type="email"
-              placeholder="Email"
-              className="outline-none"
-              value={email}
-              onChange={(e) => {
-                setEmail(e.target.value);
+          <div>
+            <div className="flex justify-between items-center gap-4 rounded-full border py-[1px] pl-4 pr-[1px]">
+              <input
+                type="email"
+                placeholder="Email"
+                className="outline-none"
+                value={email}
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                }}
+              />
+              <h1
+                className="py-2 bg-blue-500 hover:bg-blue-700 transition-all cursor-pointer text-white rounded-full px-4"
+                onClick={async () => {
+                  if (buttonState === "success") return;
+
+                  setButtonState("loading");
+
+                  await new Promise((resolve) => setTimeout(resolve, 1750));
+                  setButtonState("success");
+                }}
+              >
+                <AnimatePresence mode="popLayout" initial={false}>
+                  <motion.span
+                    transition={{ type: "spring", duration: 0.3, bounce: 0 }}
+                    initial={{ opacity: 0, y: -25 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 25 }}
+                    key={buttonState}
+                  >
+                    {buttonCopy[buttonState]}
+                  </motion.span>
+                </AnimatePresence>
+              </h1>
+            </div>
+            <p
+              className={
+                isCopied
+                  ? `mt-4 text-gray-500 text-xs`
+                  : `mt-4 cursor-pointer hover:underline hover:text-gray-500 text-xs text-gray-400 transition-all`
+              }
+              onClick={() => {
+                navigator.clipboard.writeText("team@gradsteps.com");
+                setIsCopied(true);
               }}
-            />
-            <h1
-              className="py-2 bg-blue-500 hover:bg-blue-700 transition-all cursor-pointer text-white rounded-full px-4"
-              onClick={async () => {
-                if (buttonState === "success") return;
-
-                setButtonState("loading");
-
-                await new Promise((resolve) => setTimeout(resolve, 1750));
-                setButtonState("success");
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{
+                delay: 1.4,
+                duration: 0.2,
               }}
             >
-              <AnimatePresence mode="popLayout" initial={false}>
-                <motion.span
-                  transition={{ type: "spring", duration: 0.3, bounce: 0 }}
-                  initial={{ opacity: 0, y: -25 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: 25 }}
-                  key={buttonState}
-                >
-                  {buttonCopy[buttonState]}
-                </motion.span>
-              </AnimatePresence>
-            </h1>
+              {isCopied
+                ? "Email copied to clipboard!"
+                : "Interested in contributing? Email us"}
+            </p>
           </div>
         </motion.div>
-        <motion.p
-          className={
-            isCopied
-              ? `mt-4 text-gray-500 text-xs`
-              : `mt-4 cursor-pointer hover:underline hover:text-gray-500 text-xs text-gray-400 transition-all`
-          }
-          onClick={() => {
-            navigator.clipboard.writeText("team@gradsteps.com");
-            setIsCopied(true);
-          }}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{
-            delay: 1.4,
-            duration: 0.2,
-          }}
-        >
-          {isCopied
-            ? "Email copied to clipboard!"
-            : "Interested in contributing? Email us"}
-        </motion.p>
       </div>
     </div>
   );
