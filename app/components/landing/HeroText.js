@@ -113,7 +113,7 @@ export default function HeroText() {
               }}
             />
             <h1
-              className="py-2 bg-black cursor-pointer text-white rounded-full px-4"
+              className="py-2 bg-blue-500 hover:bg-blue-700 transition-all cursor-pointer text-white rounded-full px-4"
               onClick={async () => {
                 if (buttonState === "success") return;
 
