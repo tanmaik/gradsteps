@@ -1,6 +1,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import UnsupportedMobile from "./components/shared/UnsupportedMobile";
+import { Analytics } from "@vercel/analytics/react";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -12,6 +13,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
+        <Analytics />
         <div className="hidden md:inline">{children}</div>
         <div className="md:hidden">
           <div className="flex justify-center items-center">
