@@ -22,7 +22,7 @@ export default function MoneyTicker() {
         No more rushing to meet requirements. You tell us
         <br /> when you want to graduate and we&apos;ll make it happen.
       </p>
-      <p className={`text-6xl ${GeistMono.className} mt-6`}>
+      <p className={`text-6xl ${GeistMono.className} mt-6 text-emerald-500`}>
         $
         <NumberTicker value={10000} direction="up" />
       </p>
