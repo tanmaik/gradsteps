@@ -27,6 +27,7 @@ export default function MoneyTicker() {
         <NumberTicker value={10000} direction="up" />
       </p>
       <p className="text-sm mt-2 text-gray-400">Possible tuition money saved</p>
+      <hr className="mt-20" />
     </motion.div>
   );
 }
