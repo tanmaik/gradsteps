@@ -1,6 +1,7 @@
 "use client";
 import ExamplePlanGraphic from "./components/landing/ExamplePlanGraphic";
 import HeroText from "./components/landing/HeroText";
+import MoneyTicker from "./components/landing/MoneyTicker";
 import StudentBento from "./components/landing/StudentBento";
 import StudentInfoSpread from "./components/landing/StudentInfoSpread";
 import StudentsHeader from "./components/landing/StudentsHeader";
@@ -17,6 +18,7 @@ export default function Home() {
         <StudentsHeader />
         <StudentInfoSpread />
         <StudentBento />
+        <MoneyTicker />
       </div>
     </main>
   );
