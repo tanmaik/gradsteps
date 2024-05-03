@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 export default function StudentsHeader() {
   return (
-    <div className="text-center mt-16 font-medium">
+    <div className="text-center mt-16 font-medium" id="students">
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}

@@ -1,6 +1,8 @@
 "use client";
 import ExamplePlanGraphic from "./components/landing/ExamplePlanGraphic";
 import HeroText from "./components/landing/HeroText";
+import StudentBento from "./components/landing/StudentBento";
+import StudentInfoSpread from "./components/landing/StudentInfoSpread";
 import StudentsHeader from "./components/landing/StudentsHeader";
 import Navbar from "./components/shared/Navbar";
 
@@ -13,6 +15,8 @@ export default function Home() {
         <HeroText />
         <ExamplePlanGraphic />
         <StudentsHeader />
+        <StudentInfoSpread />
+        <StudentBento />
       </div>
     </main>
   );
