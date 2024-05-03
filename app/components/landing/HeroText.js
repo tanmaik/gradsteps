@@ -60,7 +60,7 @@ export default function HeroText() {
             ))}
           </div>
           {/* Animate second part */}
-          <div>
+          <div className="mt-1">
             {secondWords.map((word, index) => (
               <motion.p
                 key={`second-${index}`}
