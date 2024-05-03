@@ -5,8 +5,8 @@ import Navbar from "./components/shared/Navbar";
 
 export default function Home() {
   return (
-    <main className=" flex justify-center">
-      <div className="w-[50rem]">
+    <main className=" flex justify-center overflow-hidden">  {/* add overflow hidden to reduce scroll jitter */}
+      <div className="w-[48rem]">
         <Navbar />
         <HeroText />
         <ExamplePlanGraphic />
