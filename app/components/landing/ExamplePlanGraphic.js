@@ -23,7 +23,6 @@ function ExamplePlan() {
   const divVariants = {
     offScreen: {
       y: 200, // Starts off screen, 200 pixels below the final position
-
       opacity: 0,
     },
     onScreen: {
@@ -44,7 +43,8 @@ function ExamplePlan() {
       className="border p-3 rounded-2xl w-[24rem] shadow-sm z-10 bg-white"
       variants={divVariants}
       initial="offScreen"
-      animate={["onScreen", "slide"]}
+      whileInView="onScreen"
+      viewport={{ once: true }}
     >
       <div className="flex items-center gap-4">
         <Image
@@ -183,7 +183,8 @@ export default function ExamplePlanGraphic() {
       <motion.div
         className="text-sm mt-4"
         initial="hidden"
-        animate="visible"
+        whileInView="visible"
+        viewport={{ once: true }}
         variants={textVariants}
       >
         <h3>Most intuitive degree planner to date.</h3>

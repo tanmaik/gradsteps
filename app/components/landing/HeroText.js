@@ -32,7 +32,9 @@ export default function HeroText() {
         <motion.button
           className="rounded-full cursor-help px-3 py-1 bg-gradient-to-r text-sm from-blue-500 to-blue-600 text-white"
           initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+
           transition={{ duration: 0.2, type: "spring", stiffness: 100 }}
         >
           Private beta
@@ -44,7 +46,9 @@ export default function HeroText() {
               <motion.span
                 key={`first-${index}`}
                 initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+
                 transition={{
                   delay: 0.1 * index + 0.2,
                   duration: 0.4,
@@ -63,7 +67,9 @@ export default function HeroText() {
               <motion.span
                 key={`second-${index}`}
                 initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+
                 transition={{
                   delay: 0.1 * index + 0.7,
                   duration: 0.4,
@@ -80,7 +86,9 @@ export default function HeroText() {
         <motion.p
           className="mt-4"
           initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+
           transition={{
             delay: 1,
             duration: 0.3,
@@ -94,7 +102,9 @@ export default function HeroText() {
         <motion.div
           className="flex justify-center mt-4"
           initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+
           transition={{
             delay: 1,
             duration: 0.2,
@@ -128,7 +138,9 @@ export default function HeroText() {
                   <motion.span
                     transition={{ type: "spring", duration: 0.3, bounce: 0 }}
                     initial={{ opacity: 0, y: -25 }}
-                    animate={{ opacity: 1, y: 0 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+
                     exit={{ opacity: 0, y: 25 }}
                     key={buttonState}
                   >
@@ -148,7 +160,9 @@ export default function HeroText() {
                 setIsCopied(true);
               }}
               initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+
               transition={{
                 delay: 1.4,
                 duration: 0.2,
