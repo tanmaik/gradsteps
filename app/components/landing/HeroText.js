@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { CheckIcon } from "@heroicons/react/20/solid";
-
 const buttonCopy = {
   idle: "Stay Updated",
   loading: "Loading...",
@@ -127,6 +126,10 @@ export default function HeroText() {
 
                   await new Promise((resolve) => setTimeout(resolve, 1750));
                   setButtonState("success");
+                  await fetch("/api/email/add-email", {
+                    method: "POST",
+                    body: JSON.stringify({ email }),
+                  });
                 }}
               >
                 <AnimatePresence mode="popLayout" initial={false}>
