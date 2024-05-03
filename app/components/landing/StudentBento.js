@@ -7,7 +7,7 @@ import {
   SparklesIcon,
 } from "@heroicons/react/20/solid";
 
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 
 function RelevantInformation() {
   const fullText =
@@ -110,6 +110,39 @@ function RelevantInformation() {
 }
 
 function DifficultyLevel() {
+  const controlsBlue = useAnimation();
+  const controlsYellow = useAnimation();
+  const controlsRed = useAnimation();
+
+  const variants = {
+    scaled: {
+      scale: 1.4,
+    },
+    normal: {
+      scale: 1,
+    },
+  };
+
+  useEffect(() => {
+    const sequence = async () => {
+      while (true) {
+        // Loop indefinitely
+        // Blue circle scales up
+        await controlsBlue.start("scaled");
+        // Yellow circle scales up, blue scales down
+        await controlsBlue.start("normal");
+        await controlsYellow.start("scaled");
+        // Red circle scales up, yellow scales down
+        await controlsYellow.start("normal");
+        await controlsRed.start("scaled");
+        // Red circle scales down
+        await controlsRed.start("normal");
+      }
+    };
+
+    sequence();
+  }, [controlsBlue, controlsYellow, controlsRed]);
+
   return (
     <motion.div
       initial={{ opacity: 0, x: 50 }}
@@ -124,10 +157,30 @@ function DifficultyLevel() {
       className="bg-[#F8F8F8] rounded-3xl flex justify-center items-center p-6"
     >
       <div className="w-full">
-        <div className="w-full rounded-3xl bg-white border px-4 py-4 flex justify-between">
+        <div className="w-full rounded-3xl bg-white border px-4 py-4 flex items-center justify-between">
           <div className="text-sm font-medium">
             <p>Intermediate</p>
             <p className="text-gray-500">average grade, B-</p>
+          </div>
+          <div className="flex flex-col items-center justify-between  border px-2 py-1 rounded-full gap-2">
+            <motion.div
+              className="size-2 bg-blue-400 rounded-full"
+              variants={variants}
+              initial="normal"
+              animate={controlsBlue}
+            ></motion.div>
+            <motion.div
+              className="size-2 bg-yellow-400 rounded-full"
+              variants={variants}
+              initial="normal"
+              animate={controlsYellow}
+            ></motion.div>
+            <motion.div
+              className="size-2 bg-red-400 rounded-full"
+              variants={variants}
+              initial="normal"
+              animate={controlsRed}
+            ></motion.div>
           </div>
         </div>
         <h1 className="text-center font-medium leading-snug mt-4">

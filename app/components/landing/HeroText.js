@@ -34,7 +34,6 @@ export default function HeroText() {
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-
           transition={{ duration: 0.2, type: "spring", stiffness: 100 }}
         >
           Private beta
@@ -43,12 +42,11 @@ export default function HeroText() {
         <div className="text-5xl tracking-tighter mt-4 font-medium">
           <div>
             {firstWords.map((word, index) => (
-              <motion.span
+              <motion.p
                 key={`first-${index}`}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-
                 transition={{
                   delay: 0.1 * index + 0.2,
                   duration: 0.4,
@@ -58,18 +56,17 @@ export default function HeroText() {
                 className="mx-1 inline-block"
               >
                 {word}
-              </motion.span>
+              </motion.p>
             ))}
           </div>
           {/* Animate second part */}
           <div>
             {secondWords.map((word, index) => (
-              <motion.span
+              <motion.p
                 key={`second-${index}`}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-
                 transition={{
                   delay: 0.1 * index + 0.7,
                   duration: 0.4,
@@ -79,7 +76,7 @@ export default function HeroText() {
                 className="mx-1 inline-block"
               >
                 {word}
-              </motion.span>
+              </motion.p>
             ))}
           </div>
         </div>
@@ -88,7 +85,6 @@ export default function HeroText() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-
           transition={{
             delay: 1,
             duration: 0.3,
@@ -104,7 +100,6 @@ export default function HeroText() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-
           transition={{
             delay: 1,
             duration: 0.2,
@@ -140,7 +135,6 @@ export default function HeroText() {
                     initial={{ opacity: 0, y: -25 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-
                     exit={{ opacity: 0, y: 25 }}
                     key={buttonState}
                   >
@@ -162,7 +156,6 @@ export default function HeroText() {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-
               transition={{
                 delay: 1.4,
                 duration: 0.2,
