@@ -33,9 +33,6 @@ export default function NumberTicker({ delay = 0, className }) {
   }, [springValue]);
 
   return (
-    <span
-      className={`inline-block tabular-nums text-black dark:text-white ${className}`}
-      ref={ref}
-    />
+    <span className={`inline-block tabular-nums ${className}`} ref={ref} />
   );
 }
