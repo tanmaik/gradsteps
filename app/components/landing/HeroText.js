@@ -28,16 +28,17 @@ export default function HeroText() {
   return (
     <div className="flex justify-center text-center mt-10">
       <div>
-        <motion.button
-          className="rounded-full cursor-help px-3 py-1 bg-gradient-to-r text-sm from-blue-500 to-blue-600 text-white"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.2, type: "spring", stiffness: 40 }}
-        >
-          Private beta
-        </motion.button>
-
+        <a href="/pilot/fhc">
+          <motion.button
+            className="rounded-full cursor-help px-3 py-1 bg-gradient-to-r text-sm from-blue-500 to-blue-600 text-white"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.2, type: "spring", stiffness: 40 }}
+          >
+            Private beta
+          </motion.button>
+        </a>
         <div className="text-5xl tracking-tighter mt-4 font-medium">
           <div>
             {firstWords.map((word, index) => (

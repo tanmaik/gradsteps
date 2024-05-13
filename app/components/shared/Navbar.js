@@ -13,10 +13,10 @@ export default function Navbar() {
         />
       </Link>
       <div className="flex gap-6 items-center">
-        <a href="#students" className="text-sm">
+        <a href="/#students" className="text-sm">
           Students
         </a>
-        <a href="#universities" className="text-sm">
+        <a href="/#universities" className="text-sm">
           Universities
         </a>
         <a
