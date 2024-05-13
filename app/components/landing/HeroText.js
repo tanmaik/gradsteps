@@ -28,7 +28,7 @@ export default function HeroText() {
   return (
     <div className="flex justify-center text-center mt-10">
       <div>
-        <a href="/pilot/fhc">
+        <a href="/beta">
           <motion.button
             className="rounded-full cursor-help px-3 py-1 bg-gradient-to-r text-sm from-blue-500 to-blue-600 text-white"
             initial={{ opacity: 0, y: 20 }}
