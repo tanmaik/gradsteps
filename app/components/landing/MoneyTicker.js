@@ -16,7 +16,7 @@ export default function MoneyTicker() {
       }}
     >
       <h1 className="text-4xl font-medium tracking-tight">
-        Unparalleled piece of mind.
+        Unparalleled peace of mind.
       </h1>
       <p className="mt-2">
         No more rushing to meet requirements. You tell us
