@@ -3,13 +3,15 @@
 import { useState } from "react";
 import Navbar from "@/app/components/shared/Navbar";
 import { motion } from "framer-motion";
+
+import Link from "next/link";
+
 export default function Page() {
   const [password, setPassword] = useState("");
   const [opened, setOpened] = useState(false);
   const firstPart = "Thank you for your";
   const secondPart = "interest in GradSteps!";
 
-  // Split each part into words for individual animation
   const firstWords = firstPart.split(" ");
   const secondWords = secondPart.split(" ");
 
@@ -85,7 +87,7 @@ export default function Page() {
             stiffness: 40,
           }}
         >
-          Access your password-protected document below.
+          Access your password-protected material below.
         </motion.p>
         {!opened ? (
           <motion.div
@@ -115,7 +117,16 @@ export default function Page() {
             </button>
           </motion.div>
         ) : (
-          <p className="mt-2 text-sm text-emerald-600">Welcome, {password}!</p>
+          <div>
+            <p className="mt-2 text-sm text-emerald-600">
+              Welcome, {password}!
+            </p>
+            <Link href="https://app.gradsteps.com/" target="_blank">
+              <p className="text-sm">
+                Head to the beta version of the application {"->"}
+              </p>
+            </Link>
+          </div>
         )}
       </div>
     </main>
