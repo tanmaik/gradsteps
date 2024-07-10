@@ -23,6 +23,10 @@ export default function UniversityHeader() {
         <h1 className="text-4xl tracking-tight mt-2">
           Student success, made easy.
         </h1>
+        <p className="mt-2 font-base font-normal ">
+          Streamline advising and administration by <br /> ensuring students
+          plan for their future.
+        </p>
       </motion.div>
       <div className="mt-10 flex w-full justify-between font-medium text-sm text-left">
         <motion.div
