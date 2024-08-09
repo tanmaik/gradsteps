@@ -19,12 +19,12 @@ export default function Navbar() {
         <a href="/#universities" className="text-sm">
           Universities
         </a>
+
         <a
-          href="https://cal.com/tanmai/chat-about-gradsteps"
-          target="_blank"
-          className="py-1 px-4 border text-sm rounded-xl hover:bg-gray-50 transition-all"
+          href="https://app.gradsteps.com"
+          className="py-1 px-4 bg-blue-500 text-white text-sm rounded-xl hover:bg-blue-600 transition-all"
         >
-          Learn more
+          Get started
         </a>
       </div>
     </nav>
