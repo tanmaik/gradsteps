@@ -28,6 +28,22 @@ export default function HeroText() {
   return (
     <div className="flex justify-center text-center mt-10">
       <div>
+        <motion.div
+          className="mb-4"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{
+            delay: 0.1,
+            duration: 0.4,
+            type: "spring",
+            stiffness: 40,
+          }}
+        >
+          <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-full">
+            Made for Pitt students
+          </span>
+        </motion.div>
         <div className="text-5xl tracking-tighter mt-4 font-medium">
           <div>
             {firstWords.map((word, index) => (
