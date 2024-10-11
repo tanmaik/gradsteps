@@ -10,3 +10,4 @@ how it works:
    a. type in the correct output for that input
    b. look at the fine tuned model so far and use its output
 4. fine tune every couple runs (50 runs worked for me)
+
