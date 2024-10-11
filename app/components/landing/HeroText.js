@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { CheckIcon } from "@heroicons/react/20/solid";
+
 const buttonCopy = {
   idle: "Stay Updated",
   loading: "Loading...",
@@ -13,7 +14,6 @@ const buttonCopy = {
 };
 
 export default function HeroText() {
-  const [email, setEmail] = useState("");
   const [isCopied, setIsCopied] = useState(false);
   const [buttonState, setButtonState] = useState("idle");
 
@@ -64,7 +64,6 @@ export default function HeroText() {
               </motion.p>
             ))}
           </div>
-          {/* Animate second part */}
           <div className="mt-1">
             {secondWords.map((word, index) => (
               <motion.p
@@ -113,45 +112,6 @@ export default function HeroText() {
           }}
         >
           <div>
-            <div className="flex justify-between items-center gap-4 rounded-full border py-[1px] pl-4 pr-[1px]">
-              <input
-                type="email"
-                placeholder="Email"
-                className="outline-none"
-                value={email}
-                onChange={(e) => {
-                  setEmail(e.target.value);
-                }}
-              />
-              <h1
-                className="py-2 bg-black hover:bg-gray-800 transition-all cursor-pointer text-white rounded-full px-4"
-                onClick={async () => {
-                  if (buttonState === "success") return;
-
-                  setButtonState("loading");
-
-                  await new Promise((resolve) => setTimeout(resolve, 1750));
-                  setButtonState("success");
-                  await fetch("/api/email/add-email", {
-                    method: "POST",
-                    body: JSON.stringify({ email }),
-                  });
-                }}
-              >
-                <AnimatePresence mode="popLayout" initial={false}>
-                  <motion.span
-                    transition={{ type: "spring", duration: 0.3, bounce: 0 }}
-                    initial={{ opacity: 0, y: -25 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    exit={{ opacity: 0, y: 25 }}
-                    key={buttonState}
-                  >
-                    {buttonCopy[buttonState]}
-                  </motion.span>
-                </AnimatePresence>
-              </h1>
-            </div>
             <p
               className={
                 isCopied
