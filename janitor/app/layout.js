@@ -5,7 +5,7 @@ import Link from "next/link";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Janitor by GradSteps",
+  title: "janitor!",
 };
 
 export default function RootLayout({ children }) {
