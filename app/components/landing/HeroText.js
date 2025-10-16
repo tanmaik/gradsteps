@@ -1,21 +1,6 @@
-import { useState } from "react";
 import { motion } from "framer-motion";
-import { CheckIcon } from "@heroicons/react/20/solid";
-
-const buttonCopy = {
-  idle: "Stay Updated",
-  loading: "Loading...",
-  success: (
-    <div className="flex gap-1 items-center">
-      <CheckIcon className="h-5 w-5 text-white" />
-      <span>Success!</span>
-    </div>
-  ),
-};
 
 export default function HeroText() {
-  const [isCopied, setIsCopied] = useState(false);
-  const [buttonState, setButtonState] = useState("idle");
 
   // Split the headline into two parts
   const firstPart = "The smartest tool for";
