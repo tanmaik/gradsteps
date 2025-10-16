@@ -85,7 +85,7 @@ export default function HeroText() {
           and supercharge academic outcomes.
         </motion.p>
         <motion.div
-          className="flex justify-center"
+          className="flex justify-center mt-3"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
