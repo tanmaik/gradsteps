@@ -41,7 +41,7 @@ export default function HeroText() {
           }}
         >
           <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-full">
-            Made for Pitt students
+            Exclusively for the University of Pittsburgh
           </span>
         </motion.div>
         <div className="text-5xl tracking-tighter mt-4 font-medium">
@@ -100,7 +100,7 @@ export default function HeroText() {
           and supercharge academic outcomes.
         </motion.p>
         <motion.div
-          className="flex justify-center mt-4"
+          className="flex justify-center"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -111,30 +111,9 @@ export default function HeroText() {
             stiffness: 40,
           }}
         >
-          <div>
-            <p
-              className={
-                isCopied
-                  ? `mt-4 text-gray-500 text-xs`
-                  : `mt-4 cursor-pointer hover:underline hover:text-gray-500 text-xs text-gray-400 transition-all`
-              }
-              onClick={() => {
-                navigator.clipboard.writeText("team@gradsteps.com");
-                setIsCopied(true);
-              }}
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{
-                delay: 1.4,
-                duration: 0.2,
-              }}
-            >
-              {isCopied
-                ? "Email copied to clipboard!"
-                : "Interested in contributing? Email us"}
-            </p>
-          </div>
+          <p className="text-gray-500 text-xs">
+            Made by <a href="https://www.tanmai.org" className="hover:underline">Tanmai Kalisipudi</a>
+          </p>
         </motion.div>
       </div>
     </div>
