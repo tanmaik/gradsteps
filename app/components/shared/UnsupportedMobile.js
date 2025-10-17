@@ -81,6 +81,22 @@ export default function UnsupportedMobile() {
           This website is not supported on mobile yet. <br />
           Please visit on a desktop or laptop.
         </motion.p>
+        <motion.p
+          className="mt-3 text-xs text-gray-500"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            delay: 1.1,
+            duration: 0.3,
+            type: "spring",
+            stiffness: 40,
+          }}
+        >
+          Made by {" "}
+          <a href="https://www.tanmai.org" className="hover:underline">
+            Tanmai Kalisipudi
+          </a>
+        </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
