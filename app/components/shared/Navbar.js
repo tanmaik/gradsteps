@@ -20,12 +20,12 @@ export default function Navbar() {
           Universities
         </a>
 
-        <a
-          href="https://app.gradsteps.com"
-          className="py-1 px-4 bg-blue-500 text-white text-sm rounded-xl hover:bg-blue-600 transition-all"
+        <span
+          aria-disabled="true"
+          className="py-1 px-4 bg-gray-200 text-gray-400 text-sm rounded-xl cursor-not-allowed select-none"
         >
           Get started
-        </a>
+        </span>
       </div>
     </nav>
   );
